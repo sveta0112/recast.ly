@@ -13,11 +13,11 @@ class App extends React.Component {
       videos : exampleVideoData
     };
     this.onClickTitle = this.onClickTitle.bind(this);
-    
+  }
   onClickTitle(video) {
-    this.setState(
+    this.setState({
       selectedVideo : video
-    );
+    });
   }
 
   render() {

@@ -20,7 +20,7 @@ var searchYouTube = (options, callback) => {
     error: function (err) {
       console.log(err);
     }
-  })
+  });
 };
   // $.get('http://www.googleapis.com/youtube/v3/search', {
   //   console.log(options);
