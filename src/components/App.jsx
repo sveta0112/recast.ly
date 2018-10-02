@@ -1,6 +1,5 @@
 import Search from './Search.js';
 import VideoList from './VideoList.js';
-
 import VideoPlayer from './VideoPlayer.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 
@@ -14,15 +13,15 @@ class App extends React.Component {
       videos : exampleVideoData
     };
     this.onClickTitle = this.onClickTitle.bind(this);
-  }
-  onClickTitle(video){
-    this.setState({
+    
+  onClickTitle(video) {
+    this.setState(
       selectedVideo : video
-    });
+    );
   }
 
   render() {
-      return (
+    return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
@@ -33,16 +32,14 @@ class App extends React.Component {
           <div className="col-md-7">
             <VideoPlayer video={this.state.selectedVideo}/>
           </div>
-           <div className="col-md-5">
-            <VideoList 
-             videos={this.state.videos}
-             onClickTitle={this.onClickTitle} />
+          <div className="col-md-5">
+            <VideoList videos={this.state.videos} onClickTitle={this.onClickTitle} />
           </div>
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 //ReactDOM.render(React.createElement(VideoList), getElementById('.0.1.1.0.0.0'));
 
