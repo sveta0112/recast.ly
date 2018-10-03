@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getYouTubeVideos('kitty cats');
+    this.getYouTubeVideos('react tutorials');
   }
 
   getYouTubeVideos(query) {
@@ -33,6 +33,10 @@ class App extends React.Component {
       })
     );
   }
+
+  // getYoutubeReady(query){
+  //   _.debounce(() => this.getYouTubeVideos(query),500)();
+  // }
 
   onClickTitle(video) {
     this.setState({

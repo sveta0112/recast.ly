@@ -1,43 +1,43 @@
-// class Search extends React.Component {
+class Search extends React.Component {
+//made changes here
+  constructor(props) {
+    super(props);
 
-//   constructor(props) {
-//     super(props);
+    this.state = {
+      value: ''
+    };
+  }
 
-//     this.state = {
-//       value: ''
-//     };
-//   }
+  handleInputChange(e){
+    this.props.handleInputChange(e.target.value);
+    this.setState({
+      value: e.target.value
+    });
+  }
 
-//   handleInputChange(e){
-//     this.props.inputChange(e.target.value);
-//     this.setState({
-//       value: e.target.value
-//     });
-//   }
+  render() {
+    return (
+      <div className="search-bar form-inline">
+        <input className="form-control" type="text" value={this.state.value} onChange={this.handleInputChange.bind(this)}/>
+        <button className="btn hidden-sm-down">
+          <span className="glyphicon glyphicon-search"></span>
+        </button>
+      </div> 
+    );
+  }
+};
 
-//   render() {
-//     return (
-//       <div className="search-bar form-inline">
-//         <input className="form-control" type="text" value={this.state.value} onChange={this.handleInputChange.bind(this)}/>
-//         <button className="btn hidden-sm-down">
-//           <span className="glyphicon glyphicon-search"></span>
-//         </button>
-//       </div> 
-//     );
-//   }
-// };
+// var Search = ({handleInputChange}) => (
+//   <div className="search-bar form-inline">
+//     <input className="form-control" 
+//            type="text"  
+//            onChange={(e) => handleInputChange(e)}/>
+//     <button className="btn hidden-sm-down">
+//       <span className="glyphicon glyphicon-search"></span>
+//     </button>
+//   </div> 
 
-var Search = ({handleInputChange}) => (
-  <div className="search-bar form-inline">
-    <input className="form-control" 
-           type="text"  
-           onChange={(e) => handleInputChange(e)}/>
-    <button className="btn hidden-sm-down">
-      <span className="glyphicon glyphicon-search"></span>
-    </button>
-  </div> 
-
-);
+// );
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
