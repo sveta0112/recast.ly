@@ -43,13 +43,13 @@ class App extends React.Component {
       selectedVideo : video
     });
   }
-
+  //made changes, _.debounce
   render() {
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <Search handleInputChange={this.getYouTubeVideos.bind(this)}/>
+            <Search handleInputChange={_.debounce(this.getYouTubeVideos.bind(this)),500}/>
           </div>
         </nav>
         <div className="row">
