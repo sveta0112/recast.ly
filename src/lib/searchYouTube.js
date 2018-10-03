@@ -13,7 +13,7 @@ var searchYouTube = (options, callback) => {
       type: 'video',
       videoEmbeddable: 'true'
     },
-    timeout: 1000,
+    timeout: 500,
     success: function (resp) {
       callback(resp.items);
     },
@@ -21,6 +21,7 @@ var searchYouTube = (options, callback) => {
       console.log(err);
     }
   });
+  
 };
   // $.get('http://www.googleapis.com/youtube/v3/search', {
   //   console.log(options);
